@@ -1,0 +1,1 @@
+const baseUrl = "https://par-music-rest.azurewebsites.net/MusicRecord"
