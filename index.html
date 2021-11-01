@@ -16,7 +16,10 @@
 
 <body>
     <div id="app">
-        <table id="record_table" v-if="music_records.length">
+        <label>Search name</label>
+        <input type="text" v-model="filter">
+        <button class="btn btn-primary m-1" @Click="get_records()">Search</button>
+        <table class="table" id="record_table" v-if="music_records.length">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -35,9 +38,6 @@
                     <td>{{item.runTime}}</td>
                     <td>{{item.releaseDate}}</td>
                     <td>{{item.tracks}}</td>
-                    <td>
-                        <p>Hello</p>
-                    </td>
                 </tr>
             </tbody>
         </table>
