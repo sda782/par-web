@@ -11,7 +11,8 @@ Vue.createApp({
                 "runTime": null,
                 "releaseDate": null,
                 "tracks": null
-            }
+            },
+            deleteid: null
         };
     },
     async created() {
@@ -37,6 +38,16 @@ Vue.createApp({
                 console.log(this.add_record)
                 response = await axios.post(baseUrl, this.add_record)
                 console.log("response " + response.status + " " + response.statusText)
+                this.get_records()
+            } catch (ex) {
+                alert(ex.message)
+            }
+        },
+        async delete_record() {
+            const url = baseUrl + "/" + this.deleteid
+            try {
+                response = await axios.delete(url)
+                console.log(response.status + " " + response.statusText)
                 this.get_records()
             } catch (ex) {
                 alert(ex.message)
