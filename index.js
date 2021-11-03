@@ -1,4 +1,4 @@
-const baseUrl = "https://par-music-rest.azurewebsites.net/MusicRecord?name="
+const baseUrl = "https://par-music-rest.azurewebsites.net/MusicRecord"
 Vue.createApp({
     data() {
         return {
