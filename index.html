@@ -18,7 +18,7 @@
     <div id="app">
         <label>Search name</label>
         <input type="text" id="searchinput" v-model="filter">
-        <button class="btn btn-primary m-1" @Click="get_records()">Search</button>
+        <button class="btn btn-primary m-1" id="searchbutton" @Click="get_records()">Search</button>
         <table class="table" id="record_table" v-if="music_records.length">
             <thead>
                 <tr>
