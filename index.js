@@ -5,7 +5,7 @@ Vue.createApp({
             music_records: [],
             filter: '',
             add_record: {
-                "id": null,
+                "id": 0,
                 "name": null,
                 "label": null,
                 "runTime": null,
@@ -33,7 +33,14 @@ Vue.createApp({
             console.log(this.music_records);
         },
         async add_new_record() {
-
+            try {
+                console.log(this.add_record)
+                response = await axios.post(baseUrl, this.add_record)
+                console.log("response " + response.status + " " + response.statusText)
+                this.get_records()
+            } catch (ex) {
+                alert(ex.message)
+            }
         }
     },
 }).mount("#app");
