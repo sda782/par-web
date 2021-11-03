@@ -4,6 +4,14 @@ Vue.createApp({
         return {
             music_records: [],
             filter: '',
+            add_record: {
+                "id": null,
+                "name": null,
+                "label": null,
+                "runTime": null,
+                "releaseDate": null,
+                "tracks": null
+            }
         };
     },
     async created() {
@@ -23,6 +31,9 @@ Vue.createApp({
             const response = await axios.get(baseUrl);
             this.music_records = await response.data
             console.log(this.music_records);
+        },
+        async add_new_record() {
+
         }
     },
 }).mount("#app");

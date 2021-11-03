@@ -40,6 +40,16 @@
                     <td>{{item.tracks}}</td>
                 </tr>
             </tbody>
+            <tbody>
+                <tr>
+                    <td><button class="btn btn-primary" @Click="add_new_record()">Add</button></td>
+                    <td><input class="form-control" type="text" id="name_input" v-model="add_record.name"></td>
+                    <td><input class="form-control" type="text" id="label_input" v-model="add_record.label"></td>
+                    <td><input class="form-control" type="number" id="run_time_input" v-model="add_record.runTime"></td>
+                    <td><input class="form-control" type="datetime-local" id="date_input" v-model="add_record.releaseDate"></td>
+                    <td><input class="form-control" type="number" id="track_input" v-model="add_record.tracks"></td>
+                </tr>
+            </tbody>
         </table>
     </div>
     <script src="index.js" type="text/javascript"></script>
