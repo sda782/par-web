@@ -12,6 +12,7 @@ Vue.createApp({
     methods: {
         async get_records() {
             if (this.filter != '') {
+                this.music_records = []
                 const response = await axios.get(baseUrl + '?name=' + this.filter);
                 this.music_records = await response.data
                 console.log(this.music_records);
